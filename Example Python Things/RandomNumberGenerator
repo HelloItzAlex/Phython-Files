@@ -1,0 +1,4 @@
+import random
+num = random.random()
+print(num)
+print(random.randrange(20, 50, 1))

@@ -1,0 +1,27 @@
+import tkinter as tk
+root = tk.Tk()
+questionsAsked = []
+
+def yes():
+    print("yes")
+    pass
+
+def no():
+    print("no")
+    pass
+
+def modal(question):
+    if question in questionsAsked:
+        return False
+    questionsAsked.append(question)
+
+    label = tk.Label(root, text="Dumb boy")
+
+    bYes = tk.Button(root, text="Yes", command=yes)
+    bNo = tk.Button(root, text="No", command=no)
+
+    for el in [label, bYes, bNo]:
+        el.pack()
+
+modal("Do you want to continue?")
+root.mainloop()
