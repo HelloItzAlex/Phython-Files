@@ -1,9 +1,15 @@
 import tkinter as tk
+import random
+
 root = tk.Tk()
 questionsAsked = []
+numbers = []
 
-def yes():
-    print("yes")
+
+def randomnum():
+    questionsAsked.append(random.randrange(0, 9, 1))
+    print(questionsAsked)
+    #print("yes")
     pass
 
 def no():
@@ -12,15 +18,16 @@ def no():
 
 def modal(question):
     if question in questionsAsked:
+        print(questionsAsked)
         return False
     questionsAsked.append(question)
 
     label = tk.Label(root, text="Dumb boy")
 
-    bYes = tk.Button(root, text="Yes", command=yes)
-    bNo = tk.Button(root, text="No", command=no)
+    bYes = tk.Button(root, text="Yes", command=randomnum)
+    #bNo = tk.Button(root, text="No", command=no)
 
-    for el in [label, bYes, bNo]:
+    for el in [label, bYes]:
         el.pack()
 
 modal("Do you want to continue?")
